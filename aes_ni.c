@@ -520,7 +520,7 @@ void AES_CTR_encrypt(const unsigned char *in,
 	else length /= 16;
 	ONE = _mm_set_epi32(0, 1, 0, 0);
 	BSWAP_EPI64 = _mm_setr_epi8(7, 6, 5, 4, 3, 2, 1, 0, 15, 14, 13, 12, 11, 10, 9, 8);
-#ifndef _WIN64
+#ifdef _WIN64
 	ctr_block = _mm_insert_epi64(ctr_block, *(long long*)ivec, 1);
 #else
 	ctr_block = _mm_set_epi64(*(__m64*)ivec, *(__m64*)&ctr_block);
