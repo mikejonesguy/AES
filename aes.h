@@ -212,9 +212,12 @@ AES_RETURN aes_ctr_crypt(const unsigned char *ibuf, unsigned char *obuf,
 
 #endif
 
-#if 1
-#define ADD_AESNI_MODE_CALLS
-#define USE_AES_CONTEXT
+#if 0
+#  define ADD_AESNI_MODE_CALLS
+#endif
+
+#if 0 && defined( ADD_AESNI_MODE_CALLS )
+#  define USE_AES_CONTEXT
 #endif
 
 #ifdef ADD_AESNI_MODE_CALLS
