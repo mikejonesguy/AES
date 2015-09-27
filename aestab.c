@@ -383,7 +383,7 @@ AES_RETURN aes_init(void)
     return EXIT_SUCCESS;
 }
 
-/* automatic code initialisation (suggested by by Henrik S. Gaßmann) */
+/* automatic code initialisation (suggested by by Henrik S. Gaï¿½mann) */
 
 #ifdef _MSC_VER
 
@@ -400,7 +400,7 @@ static void aes_startup(void) __attribute__((constructor))
 
 #else
 
-#error dynamic tables cannot be initialised on your system
+#error dynamic tables must be initialised manually on your system
 
 #endif
 
